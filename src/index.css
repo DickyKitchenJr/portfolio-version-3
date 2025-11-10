@@ -9,15 +9,6 @@
 
 @font-face {
   /* type = san-serif */
-  font-family: "NotoSans";
-  src: url(./assets/fonts/NotoSans-VariableFont_wdth\wght.ttf)
-    format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  /* type = san-serif */
   font-family: "Montserrat";
   src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
   font-weight: 100 900;
@@ -25,12 +16,20 @@
 }
 
 :root {
-  --light-cold: #a0d2eb;
+  /* --light-cold: #a0d2eb;
   --dark-cold: #4caedf;
   --light: #e5eaf5;
   --medium-purple: #d0bdf4;
   --purple-pain: #845bb3;
-  --dark: #494d5f;
+  --dark: #494d5f; */
+  --light-mainheaders: #1a3163;
+  --light-subheaders: #365493;
+  --light-body: #474b5d;
+  --light: #e5eaf5;
+  --dark-mainheaders: #525bff;
+  --dark-subheaders: #4f43b9;
+  --dark-body: #b4abdd;
+  --dark: #1f1f2a;
 }
 
 * {
@@ -50,15 +49,13 @@ body {
 }
 
 h1 {
-  background-color: var(--light-cold);
   font-family: "PlayfairDisplay", serif;
-  color: var(--dark);
+  color: var(--light-mainheaders);
 }
 
 @media (prefers-color-scheme: dark) {
   h1 {
-    background-color: var(--dark-cold);
-    color: var(--light);
+    color: var(--dark-mainheaders);
   }
 }
 
@@ -67,9 +64,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--purple-pain);
+  color: var(--light-subheaders);
   font-family: "Montserrat", sans-serif;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -78,17 +74,17 @@ h6 {
   h4,
   h5,
   h6 {
-    color: var(--medium-purple);
+    color: var(--dark-subheaders);
   }
 }
 
 p {
   font-family: "Montserrat", sans-serif;
-  color: var(--dark);
+  color: var(--light-body);
 }
 
 @media (prefers-color-scheme: dark) {
   p {
-    color: var(--light);
+    color: var(--dark-body);
   }
 }
