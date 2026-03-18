@@ -38,9 +38,9 @@ h1 {
 }
 
 .comic-box {
-  --comic-me-space: 20rem; /* tune to match the image's rendered width */
   min-height: 15rem;
-  max-width: 1375px;
+  max-width: 90rem;
+  min-width: 23rem;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 2rem;
@@ -51,12 +51,20 @@ h1 {
   box-shadow: 15px 5px 52px -9px rgba(76, 174, 223, 1);
   padding-top: 1rem;
   padding-left: 1rem;
-  padding-right: calc(var(--comic-me-space) + 1rem);
 }
 
 .left-right {
-  display: flex;
-  justify-content: space-between;
+  padding-right: 1rem;
+  padding-bottom: 17rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .left-right {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20rem;
+    padding-bottom: 0;
+  }
 }
 
 .comic-box:hover {
@@ -67,11 +75,14 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 110%;
-  width: auto;
+  height: 17rem;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
+  .comic-me {
+    height: 20rem;
+    width: auto;
+  }
 }
 
 h2 {
@@ -98,10 +109,58 @@ h2 {
   }
 }
 
-.skills{
+.comic-word {
+  position: absolute;
+  top: -3rem;
+  right: -3rem;
+  height: 7rem;
+  width: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .comic-word {
+    top: -3rem;
+    right: -3rem;
+    height: 12rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .comic-word {
+    top: -4rem;
+    right: -4rem;
+    height: 17rem;
+  }
+}
+
+.skills-box {
+  padding-right: 27%;
+}
+
+.skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 0.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+
+.decreased-padding {
+  padding-right: 1rem;
+}
+
+.resume-ul {
+  padding-left: 1rem;
+  list-style: inside;
+}
+
+.added-margin-border {
+  border-bottom: black 6px dotted;
+  margin-bottom: 1rem;
 }
 
 .content-tab-right {
@@ -160,5 +219,3 @@ h2 {
     background-color: #4caedf;
   }
 }
-
-

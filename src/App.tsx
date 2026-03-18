@@ -1,7 +1,19 @@
+import { useState } from "react";
 import "./App.css";
 import comicMe from "./assets/images/comic-inspired-me.png";
+import superComicMe from "./assets/images/superhero-comic-inspired-me.png";
+import bam from "./assets/images/bam.png";
+import bang from "./assets/images/bang.png";
+import boom from "./assets/images/boom.png";
+import pow from "./assets/images/pow.png";
 
 function App() {
+  const [isSuperComicImage, setIsSuperComicImage] = useState(false);
+
+  const toggleComicImage = () => {
+    setIsSuperComicImage(!isSuperComicImage);
+  };
+
   return (
     <>
       <header>
@@ -30,8 +42,10 @@ function App() {
           </div>
           <img
             className="comic-me"
-            src={comicMe}
+            src={isSuperComicImage ? superComicMe : comicMe}
             alt="a comic inspired image of Dicky Kitchen Jr"
+            onMouseEnter={toggleComicImage}
+            onMouseLeave={toggleComicImage}
           />
         </div>
         <div className="comic-box skills-box">
@@ -48,15 +62,16 @@ function App() {
               <span>❖ CSS</span> <span>❖ Git</span>
             </p>
           </div>
+          <img className="comic-word" src={bam} alt="comic style BAM" />
         </div>
-        <div className="comic-box">
+        <div className="comic-box decreased-padding">
           <div>
             <h2>Resume</h2>
-            <div>
+            <div className="added-margin-border">
               <p className="write-up">July 2024 - March 2026</p>
               <p className="write-up">Paradigm-Corp, Inc.</p>
               <p className="write-up">.NET Developer (Front-end focused)</p>
-              <ul>
+              <ul className="resume-ul">
                 <li className="write-up">
                   Introduced React.js to the team, providing a modular,
                   light-weight approach to rewriting legacy projects originally
@@ -92,11 +107,11 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="added-margin-border">
               <p className="write-up">May 2023 - May 2025</p>
               <p className="write-up">Indie Book Vault</p>
               <p className="write-up">Software Developer/Creator/Owner</p>
-              <ul>
+              <ul className="resume-ul">
                 <li className="write-up">
                   Conceived, developed, and deployed a full-stack, multi-page
                   website using React.js, React Router, Node.js, Express.js, and
@@ -126,7 +141,7 @@ function App() {
               <p className="write-up">Jan 2022 - July 2024</p>
               <p className="write-up">Self-employed</p>
               <p className="write-up">Software Developer</p>
-              <ul>
+              <ul className="resume-ul">
                 <li className="write-up">
                   Used React.js, JavaScript/TypeScript, HTML and CSS to create
                   customer websites based on their designs and requests, guiding
@@ -144,20 +159,28 @@ function App() {
               <p className="write-up">Jun 2008 - Dec 2021</p>
               <p className="write-up">Sentara Healthcare</p>
               <p className="write-up">Physical Therapist Assistant</p>
-              <ul>
+              <ul className="resume-ul">
                 <li className="write-up">
                   Worked in hospital and home care settings to provide physical
-                  therapy needs to patients
+                  therapy needs to patients using similar problem-solving skills
+                  currently used as a software developer
                 </li>
               </ul>
             </div>
           </div>
+          <img className="comic-word" src={pow} alt="comic style POW" />
         </div>
         <div className="comic-box">
-          <h2>Certifications</h2>
+          <div>
+            <h2>Certifications</h2>
+          </div>
+          <img className="comic-word" src={bang} alt="comic style BANG" />
         </div>
         <div className="comic-box">
-          <h2>Contact</h2>
+          <div>
+            <h2>Contact</h2>
+          </div>
+          <img className="comic-word" src={boom} alt="comic style BOOM" />
         </div>
       </div>
     </>
