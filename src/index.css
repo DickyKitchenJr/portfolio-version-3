@@ -15,6 +15,14 @@
   font-display: swap;
 }
 
+@font-face {
+  /* type = display */
+  font-family: "Bangers";
+  src: url(./assets/fonts/Bangers-Regular.ttf) format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   /* --light-cold: #a0d2eb;
   --dark-cold: #4caedf;
@@ -36,27 +44,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Bangers", cursive;
+  color: black;
 }
 
 body {
-  background-color: var(--light);
+  background-image: url(./assets/images/portfolio-background-image.png);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position-x: center;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--dark);
+    background-image: url(./assets/images/portfolio-background-image.png);
   }
 }
 
 h1 {
-  font-family: "PlayfairDisplay", serif;
-  color: var(--light-mainheaders);
-}
-
-@media (prefers-color-scheme: dark) {
-  h1 {
-    color: var(--dark-mainheaders);
-  }
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
+  background-color: rgb(250, 250, 250);
+  border: 2rem double black;
 }
 
 h2,
@@ -65,26 +76,9 @@ h4,
 h5,
 h6 {
   color: var(--light-subheaders);
-  font-family: "Montserrat", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--dark-subheaders);
-  }
-}
-
-p {
-  font-family: "Montserrat", sans-serif;
-  color: var(--light-body);
-}
-
-@media (prefers-color-scheme: dark) {
-  p {
-    color: var(--dark-body);
-  }
+p,
+span {
+  color: black;
 }
