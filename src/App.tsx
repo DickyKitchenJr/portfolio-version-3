@@ -198,7 +198,69 @@ function App() {
         <div className="comic-box">
           <div>
             <h2>Personal Projects</h2>
-            <p className="write-up"></p>
+            <div className="added-margin-border">
+              <p className="write-up project-name">My Math Practice</p>
+              <a
+                className="write-up project-link"
+                href="https://my-math-practice.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                my-math-practice.com
+              </a>
+              <ul className="resume-ul">
+                <li className="write-up">
+                  A math program designed to provide parents and teachers and
+                  easy way to create quick, customizable practice sessions for
+                  kids in the elementary/kindergarten age range
+                </li>
+                <li className="write-up">
+                  developed using React.js, JavaScript/TypeScript, HTML, and CSS
+                </li>
+                <li className="write-up">
+                  Project Repo -{" "}
+                  <a
+                    className="write-up project-link"
+                    href="https://github.com/DickyKitchenJr/math-practice"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="write-up project-name">Author Website</p>
+              <a
+                className="write-up project-link"
+                href="https://dickykitchenjr.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                dickykitchenjr.com
+              </a>
+              <ul className="resume-ul">
+                <li className="write-up">
+                  A multi-page site I created to show readers my books and blogs
+                  pertaining to my side hobby of fictional writing
+                </li>
+                <li className="write-up">
+                  developed using React.js, JavaScript/TypeScript, HTML, and CSS
+                </li>
+                <li className="write-up">
+                  Project Repo -{" "}
+                  <a
+                    className="write-up project-link"
+                    href="https://github.com/DickyKitchenJr/author-site-version-2/tree/main/author-v2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <img className="comic-word" src={bang} alt="comic style BANG" />
         </div>
