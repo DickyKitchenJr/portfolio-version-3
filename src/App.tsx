@@ -59,7 +59,8 @@ function App() {
               <span>❖ SQL</span> <span>❖ Node.js</span>{" "}
               <span>❖ Express.js</span> <span>❖ MySQL</span>{" "}
               <span>❖ MS SQL Server</span> <span>❖ HTML</span>{" "}
-              <span>❖ CSS</span> <span>❖ Git</span>
+              <span>❖ CSS</span> <span>❖ Git</span>{" "}
+              <span>❖ GitHub Copilot</span>
             </p>
           </div>
           <img className="comic-word" src={bam} alt="comic style BAM" />
@@ -68,8 +69,8 @@ function App() {
           <div>
             <h2>Resume</h2>
             <div className="added-margin-border">
-              <p className="write-up">July 2024 - March 2026</p>
-              <p className="write-up">Paradigm-Corp, Inc.</p>
+              <p className="write-up resume-date">July 2024 - March 2026</p>
+              <p className="write-up resume-company">Paradigm-Corp, Inc.</p>
               <p className="write-up">.NET Developer (Front-end focused)</p>
               <ul className="resume-ul">
                 <li className="write-up">
@@ -108,8 +109,8 @@ function App() {
               </ul>
             </div>
             <div className="added-margin-border">
-              <p className="write-up">May 2023 - May 2025</p>
-              <p className="write-up">Indie Book Vault</p>
+              <p className="write-up resume-date">May 2023 - May 2025</p>
+              <p className="write-up resume-company">Indie Book Vault</p>
               <p className="write-up">Software Developer/Creator/Owner</p>
               <ul className="resume-ul">
                 <li className="write-up">
@@ -137,9 +138,9 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="write-up">Jan 2022 - July 2024</p>
-              <p className="write-up">Self-employed</p>
+            <div className="added-margin-border">
+              <p className="write-up resume-date">Jan 2022 - July 2024</p>
+              <p className="write-up resume-company">Self-employed</p>
               <p className="write-up">Software Developer</p>
               <ul className="resume-ul">
                 <li className="write-up">
@@ -155,9 +156,9 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="write-up">Jun 2008 - Dec 2021</p>
-              <p className="write-up">Sentara Healthcare</p>
+            <div className="added-margin-border">
+              <p className="write-up resume-date">Jun 2008 - Dec 2021</p>
+              <p className="write-up resume-company">Sentara Healthcare</p>
               <p className="write-up">Physical Therapist Assistant</p>
               <ul className="resume-ul">
                 <li className="write-up">
@@ -167,12 +168,37 @@ function App() {
                 </li>
               </ul>
             </div>
+            <div className="resume-links-div">
+              <p className="write-up">
+                If you would like to see certifications I have earned, you can
+                view a list of{" "}
+                <a
+                  className="resume-link"
+                  href="https://certificates.dickykitchen.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  various certifications here
+                </a>{" "}
+                or a long list of certifications{" "}
+                <a
+                  className="resume-link"
+                  href="https://www.codecademy.com/users/dickykitchenjr/achievements"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  from Codecademy here
+                </a>
+                .
+              </p>
+            </div>
           </div>
           <img className="comic-word" src={pow} alt="comic style POW" />
         </div>
         <div className="comic-box">
           <div>
-            <h2>Certifications</h2>
+            <h2>Personal Projects</h2>
+            <p className="write-up"></p>
           </div>
           <img className="comic-word" src={bang} alt="comic style BANG" />
         </div>

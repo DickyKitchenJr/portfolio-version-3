@@ -62,7 +62,7 @@ h1 {
   .left-right {
     display: flex;
     justify-content: space-between;
-    padding-right: 20rem;
+    padding-right: 26rem;
     padding-bottom: 0;
   }
 }
@@ -80,13 +80,14 @@ h1 {
 
 @media only screen and (min-width: 800px) {
   .comic-me {
-    height: 20rem;
+    height: 26rem;
     width: auto;
   }
 }
 
 h2 {
   font-size: 3rem;
+  padding-bottom: 1.5rem;
 }
 
 @media only screen and (min-width: 700px) {
@@ -158,9 +159,38 @@ h2 {
   list-style: inside;
 }
 
+.resume-date {
+  color: var(--dark-subheaders);
+}
+
+.resume-company {
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 800px) {
+  .resume-company {
+    font-size: 1.45rem;
+  }
+}
+
 .added-margin-border {
   border-bottom: black 6px dotted;
   margin-bottom: 1rem;
+}
+
+.resume-links-div{
+  display: flex;
+  justify-content: center;
+}
+
+.resume-link{
+  color: var(--dark-subheaders);
+  text-decoration: none;
+}
+
+.resume-link:hover {
+  color: var(--light-mainheaders);
 }
 
 .content-tab-right {
