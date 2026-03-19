@@ -1,21 +1,76 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
+import emailjs from "@emailjs/browser";
 import comicMe from "./assets/images/comic-inspired-me.png";
 import superComicMe from "./assets/images/superhero-comic-inspired-me.png";
 import bam from "./assets/images/bam.png";
 import bang from "./assets/images/bang.png";
 import boom from "./assets/images/boom.png";
 import pow from "./assets/images/pow.png";
+import send from "./assets/images/send.png";
+import sendHover from "./assets/images/send-hover.png";
+import SuccessfulSubmission from "./helpers/SuccessfulSubmission";
 
 function App() {
   const [isSuperComicImage, setIsSuperComicImage] = useState(false);
+  const [isSendButtonHovered, setIsSendButtonHovered] = useState(false);
+  const [displaySuccess, setDisplaySuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
+
+  const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+  const service = import.meta.env.VITE_SERVICE_ID;
+  const template = import.meta.env.VITE_TEMPLATE_ID;
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(service, template, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          setFormData({
+            user_name: "",
+            user_email: "",
+            message: "",
+          });
+          setDisplaySuccess(true);
+        },
+        (error) => {
+          alert(`Message failed. Error: ${error.text}`);
+        },
+      );
+  };
 
   const toggleComicImage = () => {
     setIsSuperComicImage(!isSuperComicImage);
   };
 
+  const toggleSendButtonHover = () => {
+    setIsSendButtonHovered(!isSendButtonHovered);
+  };
+
   return (
     <>
+      {displaySuccess && <SuccessfulSubmission />}
       <header>
         <h1>Dicky Kitchen Jr - Developer Extraordinaire</h1>
         <p className="h1-subheader">
@@ -195,7 +250,7 @@ function App() {
           </div>
           <img className="comic-word" src={pow} alt="comic style POW" />
         </div>
-        <div className="comic-box">
+        <div className="comic-box decreased-padding">
           <div>
             <h2>Personal Projects</h2>
             <div className="added-margin-border">
@@ -268,6 +323,52 @@ function App() {
           <div>
             <h2>Contact</h2>
           </div>
+          <form className="contact-form" ref={form} onSubmit={sendEmail}>
+            <label className="write-up" htmlFor="user_name">
+              Name:
+            </label>
+            <input
+              value={formData.user_name}
+              onChange={handleChange}
+              className="write-up contact-input"
+              type="text"
+              name="user_name"
+              id="user_name"
+              required
+            />
+            <label className="write-up" htmlFor="user_email">
+              Email:
+            </label>
+            <input
+              value={formData.user_email}
+              onChange={handleChange}
+              className="write-up contact-input"
+              type="email"
+              name="user_email"
+              id="user_email"
+              required
+            />
+            <label className="write-up" htmlFor="message">
+              Message:
+            </label>
+            <textarea
+              value={formData.message}
+              onChange={handleChange}
+              className="write-up contact-input"
+              name="message"
+              id="message"
+              required
+            />
+            <button className="write-up submit-button" type="submit">
+              <img
+                onMouseEnter={toggleSendButtonHover}
+                onMouseLeave={toggleSendButtonHover}
+                className="comic-submit"
+                src={isSendButtonHovered ? sendHover : send}
+                alt="comic style SEND"
+              />
+            </button>
+          </form>
           <img className="comic-word" src={boom} alt="comic style BOOM" />
         </div>
       </div>

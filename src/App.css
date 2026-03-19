@@ -10,6 +10,7 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   letter-spacing: 0.4px;
+  text-wrap: balance;
 }
 
 @media only screen and (min-width: 800px) {
@@ -50,7 +51,7 @@ h1 {
   overflow: visible;
   background-color: rgb(250, 250, 250);
   border: 0.5rem solid black;
-  box-shadow: 15px 5px 52px -9px rgba(76, 174, 223, 1);
+  /* box-shadow: 15px 5px 52px -9px rgba(76, 174, 223, 1); */
   padding-top: 1rem;
   padding-left: 1rem;
 }
@@ -101,6 +102,7 @@ h2 {
 
 .write-up {
   font-size: 1rem;
+  text-wrap: pretty;
   line-height: 1.5;
   letter-spacing: 0.4px;
   margin-bottom: 1rem;
@@ -217,59 +219,36 @@ h2 {
   color: var(--light-mainheaders);
 }
 
-.content-tab-right {
-  color: var(--light-body);
-  background-color: transparent;
-  font-size: 2rem;
-  font-weight: 800;
-  box-shadow: 15px 5px 52px -9px rgba(66, 68, 90, 1);
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .contact-form {
+    padding-right: 21rem;
+  }
+}
+
+.contact-input {
+  border: solid 4px black;
+  padding: 0.5rem;
+}
+
+.submit-button {
+  width: fit-content;
+  align-self: flex-end;
+  background: none;
   border: none;
-  border-radius: 1rem;
-  padding: 1rem;
+  cursor: pointer;
 }
 
-.content-tab-right:hover {
-  color: var(--dark-body);
-  background-color: var(--dark);
-  box-shadow: 15px 5px 52px -9px rgba(76, 174, 223, 1);
+.comic-submit {
+  height: 7rem;
+  width: auto;
 }
 
-.content-tab-right:active {
-  background-color: var(--light-mainheaders);
-}
-
-.content-tab-left {
-  color: var(--light-body);
-  background-color: transparent;
-  font-size: 2rem;
-  font-weight: 800;
-  box-shadow: -15px 5px 52px -9px rgba(66, 68, 90, 1);
-  border: none;
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
-.content-tab-left:hover {
-  color: var(--dark-body);
-  background-color: var(--dark);
-  box-shadow: 15px 5px 52px -9px rgba(76, 174, 223, 1);
-}
-
-.content-tab-left:active {
-  background-color: var(--light-mainheaders);
-}
-
-@media (prefers-color-scheme: dark) {
-  .content-tab-left {
-    color: var(--dark-body);
-  }
-
-  .content-tab-left:hover {
-    color: var(--light-body);
-    background-color: #a0d2eb;
-  }
-
-  .content-tab-left:active {
-    background-color: #4caedf;
-  }
+.comic-submit:hover {
+  transform: scale(1.1);
 }
