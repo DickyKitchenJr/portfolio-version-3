@@ -1,14 +1,14 @@
 import { useState, useRef } from "react";
 import "./App.css";
 import emailjs from "@emailjs/browser";
-import comicMe from "./assets/images/comic-inspired-me.png";
-import superComicMe from "./assets/images/superhero-comic-inspired-me.png";
-import bam from "./assets/images/bam.png";
-import bang from "./assets/images/bang.png";
-import boom from "./assets/images/boom.png";
-import pow from "./assets/images/pow.png";
-import send from "./assets/images/send.png";
-import sendHover from "./assets/images/send-hover.png";
+import comicMe from "./assets/images/comic-inspired-me.webp";
+import superComicMe from "./assets/images/superhero-comic-inspired-me.webp";
+import bam from "./assets/images/bam.webp";
+import bang from "./assets/images/bang.webp";
+import boom from "./assets/images/boom.webp";
+import pow from "./assets/images/pow.webp";
+import send from "./assets/images/send.webp";
+import sendHover from "./assets/images/send-hover.webp";
 import SuccessfulSubmission from "./helpers/SuccessfulSubmission";
 
 function App() {
@@ -248,7 +248,12 @@ function App() {
               </p>
             </div>
           </div>
-          <img className="comic-word" src={pow} alt="comic style POW" />
+          <img
+            loading="lazy"
+            className="comic-word"
+            src={pow}
+            alt="comic style POW"
+          />
         </div>
         <div className="comic-box decreased-padding">
           <div>
@@ -317,7 +322,12 @@ function App() {
               </ul>
             </div>
           </div>
-          <img className="comic-word" src={bang} alt="comic style BANG" />
+          <img
+            loading="lazy"
+            className="comic-word"
+            src={bang}
+            alt="comic style BANG"
+          />
         </div>
         <div className="comic-box">
           <div>
@@ -361,6 +371,7 @@ function App() {
             />
             <button className="write-up submit-button" type="submit">
               <img
+                loading="lazy"
                 onMouseEnter={toggleSendButtonHover}
                 onMouseLeave={toggleSendButtonHover}
                 className="comic-submit"
@@ -369,7 +380,12 @@ function App() {
               />
             </button>
           </form>
-          <img className="comic-word" src={boom} alt="comic style BOOM" />
+          <img
+            loading="lazy"
+            className="comic-word"
+            src={boom}
+            alt="comic style BOOM"
+          />
         </div>
       </div>
     </>

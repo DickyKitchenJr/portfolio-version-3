@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./SuccessfulSubmission.css";
-import kapow from "../assets/images/kapow.png";
+import kapow from "../assets/images/kapow.webp";
 
 function SuccessfulSubmission() {
   const [isOpen, setIsOpen] = useState(true);
@@ -19,7 +19,12 @@ function SuccessfulSubmission() {
             Close
           </button>
         </div>
-        <img className="comic-word" src={kapow} alt="comic style KAPOW" />
+        <img
+          loading="lazy"
+          className="comic-word"
+          src={kapow}
+          alt="comic style KAPOW"
+        />
       </div>
     </div>
   );
