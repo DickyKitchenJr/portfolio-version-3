@@ -77,8 +77,8 @@ function App() {
           The talented developer with the unique name.
         </p>
       </header>
-      <div className="content-tabs">
-        <div className="comic-box left-right">
+      <main className="content-tabs">
+        <section className="comic-box left-right">
           <div>
             <h2>About</h2>
             <p className="write-up">
@@ -102,8 +102,8 @@ function App() {
             onMouseEnter={toggleComicImage}
             onMouseLeave={toggleComicImage}
           />
-        </div>
-        <div className="comic-box skills-box">
+        </section>
+        <section className="comic-box skills-box">
           <div>
             <h2>Skills</h2>
             <p className="write-up skills">
@@ -119,8 +119,8 @@ function App() {
             </p>
           </div>
           <img className="comic-word" src={bam} alt="comic style BAM" />
-        </div>
-        <div className="comic-box decreased-padding">
+        </section>
+        <section className="comic-box decreased-padding">
           <div>
             <h2>Resume</h2>
             <div className="added-margin-border">
@@ -254,8 +254,8 @@ function App() {
             src={pow}
             alt="comic style POW"
           />
-        </div>
-        <div className="comic-box decreased-padding">
+        </section>
+        <section className="comic-box decreased-padding">
           <div>
             <h2>Personal Projects</h2>
             <div className="added-margin-border">
@@ -328,8 +328,8 @@ function App() {
             src={bang}
             alt="comic style BANG"
           />
-        </div>
-        <div className="comic-box">
+        </section>
+        <section className="comic-box">
           <div>
             <h2>Contact</h2>
           </div>
@@ -386,8 +386,8 @@ function App() {
             src={boom}
             alt="comic style BOOM"
           />
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 }

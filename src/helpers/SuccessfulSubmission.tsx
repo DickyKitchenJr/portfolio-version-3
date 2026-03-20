@@ -11,7 +11,11 @@ function SuccessfulSubmission() {
 
   return (
     <div className="success-overlay">
-      <div className="comic-box success-inner-div">
+      <div
+        role="alert"
+        aria-live="assertive"
+        className="comic-box success-inner-div"
+      >
         <div>
           <h2>Success!</h2>
           <p className="write-up">Your message has been sent successfully.</p>
