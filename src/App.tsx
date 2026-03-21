@@ -15,6 +15,7 @@ function App() {
   const [isSuperComicImage, setIsSuperComicImage] = useState(false);
   const [isSendButtonHovered, setIsSendButtonHovered] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
+  const [userWantsSimplifiedFont, setUserWantsSimplifiedFont] = useState(false);
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -68,28 +69,50 @@ function App() {
     setIsSendButtonHovered(!isSendButtonHovered);
   };
 
+  const toggleComicFont = () => {
+    setUserWantsSimplifiedFont(!userWantsSimplifiedFont);
+  };
+
   return (
     <>
       {displaySuccess && <SuccessfulSubmission />}
       <header>
-        <h1>Dicky Kitchen Jr - Developer Extraordinaire</h1>
+        <h1>
+          Dicky Kitchen Jr - <br className="only-show-on-small-screens" />
+          Developer Extraordinaire
+        </h1>
         <p className="h1-subheader">
           The talented developer with the unique name.
         </p>
       </header>
       <main className="content-tabs">
+        <div className="font-button-div">
+          {!userWantsSimplifiedFont ? (
+            <button className="simple-font-button" onClick={toggleComicFont}>
+              Simplify Font
+            </button>
+          ) : (
+            <button className="comic-font-button" onClick={toggleComicFont}>
+              Comic Book Font
+            </button>
+          )}
+        </div>
         <section className="comic-box left-right">
           <div>
             <h2>About</h2>
-            <p className="write-up">
+            <p
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+            >
               Starting my software developer career in 2022 after 13+ years
               working in healthcare, I began as a freelancer creating websites
               for various individuals, while running a website where indie and
               self-published authors could apply for listing, before joining
-              Paradigm-Corp Inc in 2024 as a “.NET Developer” with a front-end
+              Paradigm-Corp Inc in 2024 as a .NET Developer with a front-end
               focus.
             </p>
-            <p className="write-up">
+            <p
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+            >
               With a passion for creating pixel perfect and accessible projects,
               I have worked on both customer facing and internal sites, on teams
               of over 20 IT professionals and as small as a solo developer.
@@ -107,15 +130,57 @@ function App() {
           <div>
             <h2>Skills</h2>
             <p className="write-up skills">
-              <span>❖ React.js</span> <span>❖ JavaScript</span>{" "}
-              <span>❖ TypeScript</span> <span>❖ C#/.NET</span>{" "}
-              <span>❖ Blazor</span> <span>❖ Jest</span>{" "}
-              <span>❖ React Router</span> <span>❖ Next.js</span>{" "}
-              <span>❖ SQL</span> <span>❖ Node.js</span>{" "}
-              <span>❖ Express.js</span> <span>❖ MySQL</span>{" "}
-              <span>❖ MS SQL Server</span> <span>❖ HTML</span>{" "}
-              <span>❖ CSS</span> <span>❖ Git</span>{" "}
-              <span>❖ GitHub Copilot</span>
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ React.js
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ JavaScript
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ TypeScript
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ C#/.NET
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Blazor
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Jest
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ React Router
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Next.js
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ SQL
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Node.js
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Express.js
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ MySQL
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ MS SQL Server
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ HTML
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ CSS
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Git
+              </span>{" "}
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ GitHub Copilot
+              </span>
             </p>
           </div>
           <img className="comic-word" src={bam} alt="comic style BAM" />
@@ -124,16 +189,32 @@ function App() {
           <div>
             <h2>Resume</h2>
             <div className="added-margin-border">
-              <p className="write-up resume-date">July 2024 - March 2026</p>
-              <p className="write-up resume-company">Paradigm-Corp, Inc.</p>
-              <p className="write-up">.NET Developer (Front-end focused)</p>
+              <p
+                className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                July 2024 - March 2026
+              </p>
+              <p
+                className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Paradigm-Corp, Inc.
+              </p>
+              <p
+                className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                .NET Developer (Front-end focused)
+              </p>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Introduced React.js to the team, providing a modular,
                   light-weight approach to rewriting legacy projects originally
                   created in MVC
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Using React.js, took on 2 projects for new initiatives within
                   the company and created the repos for those projects, provided
                   the boilerplate code for the backend, and developed 90% of the
@@ -142,20 +223,28 @@ function App() {
                   a junior member of the team so I could be reassigned to a
                   higher priority project using Blazor
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Worked within C#/.NET projects to implement updates driven by
                   project owner requests
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Created a default CSS file and component library to provide a
                   cohesive aesthetic across projects while providing reusable
                   components to decrease recoding of existing elements
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Ran queries using MS SQL Server to verify information showing
                   on the front-end was correct
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Mentored a new front-end developer; acting as their point of
                   contact for questions regarding company standards and coding
                   difficulties within their assigned projects, and mentored a
@@ -164,28 +253,48 @@ function App() {
               </ul>
             </div>
             <div className="added-margin-border">
-              <p className="write-up resume-date">May 2023 - May 2025</p>
-              <p className="write-up resume-company">Indie Book Vault</p>
-              <p className="write-up">Software Developer/Creator/Owner</p>
+              <p
+                className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                May 2023 - May 2025
+              </p>
+              <p
+                className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Indie Book Vault
+              </p>
+              <p
+                className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Software Developer/Creator/Owner
+              </p>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Conceived, developed, and deployed a full-stack, multi-page
                   website using React.js, React Router, Node.js, Express.js, and
                   MySQL which served the indie author community by providing a
                   place for readers to discover and support independent authors
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Achieved a substantial user base, with over 300 users at its
                   peak using only organic social media promotion and
                   word-of-mouth
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Incorporated the Fisher-Yates algorithm to randomize author
                   listings on each visit, ensuring fair exposure for all authors
                   and helping improve the chance of a reader finding a new
                   author; using Jest to test efficiency of the algorithm
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Integrated a user-friendly form with multiple checks and
                   validations to ensure proper formatting of information
                   provided on the form while protecting the database from
@@ -194,17 +303,33 @@ function App() {
               </ul>
             </div>
             <div className="added-margin-border">
-              <p className="write-up resume-date">Jan 2022 - July 2024</p>
-              <p className="write-up resume-company">Self-employed</p>
-              <p className="write-up">Software Developer</p>
+              <p
+                className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Jan 2022 - July 2024
+              </p>
+              <p
+                className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Self-employed
+              </p>
+              <p
+                className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Software Developer
+              </p>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Used React.js, JavaScript/TypeScript, HTML and CSS to create
                   customer websites based on their designs and requests, guiding
                   them through accessibility and responsiveness concepts to
                   ensure the best user experience
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Integrated 3rd party plug-ins to enhance customer websites and
                   add shopping functionality to the customers website for their
                   distributor of choice
@@ -212,11 +337,25 @@ function App() {
               </ul>
             </div>
             <div className="added-margin-border">
-              <p className="write-up resume-date">Jun 2008 - Dec 2021</p>
-              <p className="write-up resume-company">Sentara Healthcare</p>
-              <p className="write-up">Physical Therapist Assistant</p>
+              <p
+                className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Jun 2008 - Dec 2021
+              </p>
+              <p
+                className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Sentara Healthcare
+              </p>
+              <p
+                className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Physical Therapist Assistant
+              </p>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Worked in hospital and home care settings to provide physical
                   therapy needs to patients using similar problem-solving skills
                   currently used as a software developer
@@ -224,11 +363,13 @@ function App() {
               </ul>
             </div>
             <div className="resume-links-div">
-              <p className="write-up">
+              <p
+                className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              >
                 If you would like to see certifications I have earned, you can
                 view a list of{" "}
                 <a
-                  className="resume-link"
+                  className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
                   href="https://certificates.dickykitchen.com/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -237,7 +378,7 @@ function App() {
                 </a>{" "}
                 or a long list of certifications{" "}
                 <a
-                  className="resume-link"
+                  className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
                   href="https://www.codecademy.com/users/dickykitchenjr/achievements"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -259,9 +400,13 @@ function App() {
           <div>
             <h2>Personal Projects</h2>
             <div className="added-margin-border">
-              <p className="write-up project-name">My Math Practice</p>
+              <p
+                className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                My Math Practice
+              </p>
               <a
-                className="write-up project-link"
+                className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                 href="https://my-math-practice.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -269,18 +414,24 @@ function App() {
                 my-math-practice.com
               </a>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   A math program designed to provide parents and teachers and
                   easy way to create quick, customizable practice sessions for
                   kids in the elementary/kindergarten age range
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   developed using React.js, JavaScript/TypeScript, HTML, and CSS
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Project Repo -{" "}
                   <a
-                    className="write-up project-link"
+                    className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                     href="https://github.com/DickyKitchenJr/math-practice"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -291,9 +442,13 @@ function App() {
               </ul>
             </div>
             <div>
-              <p className="write-up project-name">Author Website</p>
+              <p
+                className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
+              >
+                Author Website
+              </p>
               <a
-                className="write-up project-link"
+                className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                 href="https://dickykitchenjr.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -301,17 +456,23 @@ function App() {
                 dickykitchenjr.com
               </a>
               <ul className="resume-ul">
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   A multi-page site I created to show readers my books and blogs
                   pertaining to my side hobby of fictional writing
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   developed using React.js, JavaScript/TypeScript, HTML, and CSS
                 </li>
-                <li className="write-up">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
                   Project Repo -{" "}
                   <a
-                    className="write-up project-link"
+                    className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                     href="https://github.com/DickyKitchenJr/author-site-version-2/tree/main/author-v2"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -334,37 +495,46 @@ function App() {
             <h2>Contact</h2>
           </div>
           <form className="contact-form" ref={form} onSubmit={sendEmail}>
-            <label className="write-up" htmlFor="user_name">
+            <label
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              htmlFor="user_name"
+            >
               Name:
             </label>
             <input
               value={formData.user_name}
               onChange={handleChange}
-              className="write-up contact-input"
+              className={`write-up contact-input ${userWantsSimplifiedFont && "simple-font"}`}
               type="text"
               name="user_name"
               id="user_name"
               required
             />
-            <label className="write-up" htmlFor="user_email">
+            <label
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              htmlFor="user_email"
+            >
               Email:
             </label>
             <input
               value={formData.user_email}
               onChange={handleChange}
-              className="write-up contact-input"
+              className={`write-up contact-input ${userWantsSimplifiedFont && "simple-font"}`}
               type="email"
               name="user_email"
               id="user_email"
               required
             />
-            <label className="write-up" htmlFor="message">
+            <label
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              htmlFor="message"
+            >
               Message:
             </label>
             <textarea
               value={formData.message}
               onChange={handleChange}
-              className="write-up contact-input"
+              className={`write-up contact-input ${userWantsSimplifiedFont && "simple-font"}`}
               name="message"
               id="message"
               required
