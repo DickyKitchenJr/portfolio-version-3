@@ -1,9 +1,8 @@
 @font-face {
-  /* type = serif */
-  font-family: "PlayfairDisplay";
-  src: url(./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf)
-    format("truetype");
-  font-weight: 400 900;
+  /* type = display */
+  font-family: "Bangers";
+  src: url(./assets/fonts/Bangers-Regular.ttf) format("truetype");
+  font-weight: 100 900;
   font-display: swap;
 }
 
@@ -11,14 +10,6 @@
   /* type = san-serif */
   font-family: "Montserrat";
   src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  /* type = display */
-  font-family: "Bangers";
-  src: url(./assets/fonts/Bangers-Regular.ttf) format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
