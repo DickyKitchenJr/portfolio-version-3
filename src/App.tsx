@@ -9,6 +9,8 @@ import boom from "./assets/images/boom.webp";
 import pow from "./assets/images/pow.webp";
 import send from "./assets/images/send.webp";
 import sendHover from "./assets/images/send-hover.webp";
+import minus from "./assets/images/minus.webp";
+import plus from "./assets/images/plus.webp";
 import SuccessfulSubmission from "./helpers/SuccessfulSubmission";
 
 function App() {
@@ -16,6 +18,12 @@ function App() {
   const [isSendButtonHovered, setIsSendButtonHovered] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
   const [userWantsSimplifiedFont, setUserWantsSimplifiedFont] = useState(false);
+  const [showDetails, setShowDetails] = useState({
+    paradigm: false,
+    indieBookVault: false,
+    selfEmployed: false,
+    sentara: false,
+  });
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -71,6 +79,13 @@ function App() {
 
   const toggleComicFont = () => {
     setUserWantsSimplifiedFont(!userWantsSimplifiedFont);
+  };
+
+  const toggleDetails = (section: keyof typeof showDetails) => {
+    setShowDetails((previous) => ({
+      ...previous,
+      [section]: !previous[section],
+    }));
   };
 
   return (
@@ -204,53 +219,83 @@ function App() {
               >
                 .NET Developer (Front-end focused)
               </p>
-              <ul className="resume-ul">
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              {showDetails.paradigm ? (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("paradigm")}
                 >
-                  Introduced React.js to the team, providing a modular,
-                  light-weight approach to rewriting legacy projects originally
-                  created in MVC
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  Hide Details
+                  <img
+                    className="show-hide-image"
+                    src={minus}
+                    alt="minus icon"
+                    loading="lazy"
+                  />
+                </button>
+              ) : (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("paradigm")}
                 >
-                  Using React.js, took on 2 projects for new initiatives within
-                  the company and created the repos for those projects, provided
-                  the boilerplate code for the backend, and developed 90% of the
-                  front-end for one and 80% of the front-end for the other
-                  before being asked to hand off the projects for completion by
-                  a junior member of the team so I could be reassigned to a
-                  higher priority project using Blazor
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Worked within C#/.NET projects to implement updates driven by
-                  project owner requests
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Created a default CSS file and component library to provide a
-                  cohesive aesthetic across projects while providing reusable
-                  components to decrease recoding of existing elements
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Ran queries using MS SQL Server to verify information showing
-                  on the front-end was correct
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Mentored a new front-end developer; acting as their point of
-                  contact for questions regarding company standards and coding
-                  difficulties within their assigned projects, and mentored a
-                  designer who was attempting to become a front-end developer
-                </li>
-              </ul>
+                  Show Details
+                  <img
+                    className="show-hide-image"
+                    src={plus}
+                    alt="plus icon"
+                    loading="lazy"
+                  />
+                </button>
+              )}
+              {showDetails.paradigm && (
+                <ul className="resume-ul">
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Introduced React.js to the team, providing a modular,
+                    light-weight approach to rewriting legacy projects
+                    originally created in MVC
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Using React.js, took on 2 projects for new initiatives
+                    within the company and created the repos for those projects,
+                    provided the boilerplate code for the backend, and developed
+                    90% of the front-end for one and 80% of the front-end for
+                    the other before being asked to hand off the projects for
+                    completion by a junior member of the team so I could be
+                    reassigned to a higher priority project using Blazor
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Worked within C#/.NET projects to implement updates driven
+                    by project owner requests
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Created a default CSS file and component library to provide
+                    a cohesive aesthetic across projects while providing
+                    reusable components to decrease recoding of existing
+                    elements
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Ran queries using MS SQL Server to verify information
+                    showing on the front-end was correct
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Mentored a new front-end developer; acting as their point of
+                    contact for questions regarding company standards and coding
+                    difficulties within their assigned projects, and mentored a
+                    designer who was attempting to become a front-end developer
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="added-margin-border">
               <p
@@ -268,39 +313,69 @@ function App() {
               >
                 Software Developer/Creator/Owner
               </p>
-              <ul className="resume-ul">
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              {showDetails.indieBookVault ? (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("indieBookVault")}
                 >
-                  Conceived, developed, and deployed a full-stack, multi-page
-                  website using React.js, React Router, Node.js, Express.js, and
-                  MySQL which served the indie author community by providing a
-                  place for readers to discover and support independent authors
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  Hide Details
+                  <img
+                    className="show-hide-image"
+                    src={minus}
+                    alt="minus icon"
+                    loading="lazy"
+                  />
+                </button>
+              ) : (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("indieBookVault")}
                 >
-                  Achieved a substantial user base, with over 300 users at its
-                  peak using only organic social media promotion and
-                  word-of-mouth
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Incorporated the Fisher-Yates algorithm to randomize author
-                  listings on each visit, ensuring fair exposure for all authors
-                  and helping improve the chance of a reader finding a new
-                  author; using Jest to test efficiency of the algorithm
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Integrated a user-friendly form with multiple checks and
-                  validations to ensure proper formatting of information
-                  provided on the form while protecting the database from
-                  malicious actors
-                </li>
-              </ul>
+                  Show Details
+                  <img
+                    className="show-hide-image"
+                    src={plus}
+                    alt="plus icon"
+                    loading="lazy"
+                  />
+                </button>
+              )}
+              {showDetails.indieBookVault && (
+                <ul className="resume-ul">
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Conceived, developed, and deployed a full-stack, multi-page
+                    website using React.js, React Router, Node.js, Express.js,
+                    and MySQL which served the indie author community by
+                    providing a place for readers to discover and support
+                    independent authors
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Achieved a substantial user base, with over 300 users at its
+                    peak using only organic social media promotion and
+                    word-of-mouth
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Incorporated the Fisher-Yates algorithm to randomize author
+                    listings on each visit, ensuring fair exposure for all
+                    authors and helping improve the chance of a reader finding a
+                    new author; using Jest to test efficiency of the algorithm
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Integrated a user-friendly form with multiple checks and
+                    validations to ensure proper formatting of information
+                    provided on the form while protecting the database from
+                    malicious actors
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="added-margin-border">
               <p
@@ -318,23 +393,52 @@ function App() {
               >
                 Software Developer
               </p>
-              <ul className="resume-ul">
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              {showDetails.selfEmployed ? (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("selfEmployed")}
                 >
-                  Used React.js, JavaScript/TypeScript, HTML and CSS to create
-                  customer websites based on their designs and requests, guiding
-                  them through accessibility and responsiveness concepts to
-                  ensure the best user experience
-                </li>
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  Hide Details
+                  <img
+                    className="show-hide-image"
+                    src={minus}
+                    alt="minus icon"
+                    loading="lazy"
+                  />
+                </button>
+              ) : (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("selfEmployed")}
                 >
-                  Integrated 3rd party plug-ins to enhance customer websites and
-                  add shopping functionality to the customers website for their
-                  distributor of choice
-                </li>
-              </ul>
+                  Show Details
+                  <img
+                    className="show-hide-image"
+                    src={plus}
+                    alt="plus icon"
+                    loading="lazy"
+                  />
+                </button>
+              )}
+              {showDetails.selfEmployed && (
+                <ul className="resume-ul">
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Used React.js, JavaScript/TypeScript, HTML and CSS to create
+                    customer websites based on their designs and requests,
+                    guiding them through accessibility and responsiveness
+                    concepts to ensure the best user experience
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Integrated 3rd party plug-ins to enhance customer websites
+                    and add shopping functionality to the customers website for
+                    their distributor of choice
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="added-margin-border">
               <p
@@ -352,15 +456,45 @@ function App() {
               >
                 Physical Therapist Assistant
               </p>
-              <ul className="resume-ul">
-                <li
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+              {showDetails.sentara ? (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("sentara")}
                 >
-                  Worked in hospital and home care settings to provide physical
-                  therapy needs to patients using similar problem-solving skills
-                  currently used as a software developer
-                </li>
-              </ul>
+                  Hide Details
+                  <img
+                    className="show-hide-image"
+                    src={minus}
+                    alt="minus icon"
+                    loading="lazy"
+                  />
+                </button>
+              ) : (
+                <button
+                  className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                  onClick={() => toggleDetails("sentara")}
+                >
+                  Show Details
+                  <img
+                    className="show-hide-image"
+                    src={plus}
+                    alt="plus icon"
+                    loading="lazy"
+                  />
+                </button>
+              )}
+              {showDetails.sentara && (
+                <ul className="resume-ul">
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
+                    Worked in hospital and home care settings to provide
+                    physical therapy needs to patients using similar
+                    problem-solving skills currently used as a software
+                    developer
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="resume-links-div">
               <p

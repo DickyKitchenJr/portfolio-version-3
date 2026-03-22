@@ -245,13 +245,28 @@ h2 {
   padding-right: 1rem;
 }
 
+.show-hide-details-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  background-color: transparent;
+  color: var(--dark-subheaders);
+  border: none;
+  cursor: pointer;
+}
+
+.show-hide-image {
+  width: 4rem;
+}
+
 .resume-ul {
   padding-left: 1rem;
   list-style: inside;
 }
 
 .resume-date {
-  color: var(--dark-subheaders);
+  color: var(--outlier);
 }
 
 .resume-company {
