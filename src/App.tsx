@@ -204,11 +204,11 @@ function App() {
           <div>
             <h2>Resume</h2>
             <div className="added-margin-border">
-              <p
+              <h3
                 className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 July 2024 - March 2026
-              </p>
+              </h3>
               <p
                 className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
               >
@@ -298,11 +298,11 @@ function App() {
               )}
             </div>
             <div className="added-margin-border">
-              <p
+              <h3
                 className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 May 2023 - May 2025
-              </p>
+              </h3>
               <p
                 className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
               >
@@ -378,11 +378,11 @@ function App() {
               )}
             </div>
             <div className="added-margin-border">
-              <p
+              <h3
                 className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 Jan 2022 - July 2024
-              </p>
+              </h3>
               <p
                 className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
               >
@@ -441,11 +441,11 @@ function App() {
               )}
             </div>
             <div className="added-margin-border">
-              <p
+              <h3
                 className={`write-up resume-date ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 Jun 2008 - Dec 2021
-              </p>
+              </h3>
               <p
                 className={`write-up resume-company ${userWantsSimplifiedFont && "simple-font"}`}
               >
@@ -534,11 +534,11 @@ function App() {
           <div>
             <h2>Personal Projects</h2>
             <div className="added-margin-border">
-              <p
+              <h3
                 className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 My Math Practice
-              </p>
+              </h3>
               <a
                 className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                 href="https://my-math-practice.com"
@@ -576,11 +576,11 @@ function App() {
               </ul>
             </div>
             <div>
-              <p
+              <h3
                 className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
               >
                 Author Website
-              </p>
+              </h3>
               <a
                 className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
                 href="https://dickykitchenjr.com"

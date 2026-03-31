@@ -271,7 +271,11 @@ h2 {
 
 .resume-company {
   font-size: 1.3rem;
-  text-decoration: underline;
+  width: fit-content;
+  line-height: 1.5rem;
+  padding-right: 0.4rem;
+  border-bottom: 2px dashed black;
+  border-right: 2px dashed black;
 }
 
 @media only screen and (min-width: 800px) {
@@ -292,7 +296,6 @@ h2 {
 
 .resume-link {
   color: var(--dark-subheaders);
-  text-decoration: none;
 }
 
 .resume-link:hover {
@@ -301,7 +304,12 @@ h2 {
 
 .project-name {
   font-size: 1.3rem;
-  text-decoration: underline;
+  width: fit-content;
+  line-height: 1.5rem;
+  padding-right: 0.4rem;
+  border-bottom: 2px dashed black;
+  border-right: 2px dashed black;
+  color: black;
 }
 
 @media only screen and (min-width: 800px) {
@@ -312,7 +320,6 @@ h2 {
 
 .project-link {
   color: var(--dark-subheaders);
-  text-decoration: none;
 }
 
 .project-link:hover {
