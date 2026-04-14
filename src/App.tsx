@@ -19,6 +19,7 @@ function App() {
   const [displaySuccess, setDisplaySuccess] = useState(false);
   const [userWantsSimplifiedFont, setUserWantsSimplifiedFont] = useState(false);
   const [showDetails, setShowDetails] = useState({
+    about: false,
     paradigm: false,
     indieBookVault: false,
     selfEmployed: false,
@@ -118,55 +119,110 @@ function App() {
             <p
               className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
             >
-              I could list my technical skills and work history, but what
-              matters is what makes me different, right? (plus you can get that
-              stuff by scrolling down)
+              TLDR: Super(hero) developer with applicable experience from over a
+              decade in a previous career who brings more to the table than
+              your typical developer.
             </p>
-            <p
-              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-            >
-              Well, I could start with my passion for creating pixel perfect and
-              accessible projects, the fact that I've worked on both customer
-              facing and internal sites, that I've been on teams of over 20 IT
-              professionals and as small as a solo developer, or the list of
-              recommendations I've received from colleagues and clients on my{" "}
-              <a
-                className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
-                href="https://www.linkedin.com/in/dicky-kitchen-jr-89727b240/"
-                target="_blank"
-                rel="noopener noreferrer"
+            {showDetails.about ? (
+              <button
+                className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                onClick={() => toggleDetails("about")}
               >
-                LinkedIn profile
-              </a>
-              , but that's all just icing on the cake.
-            </p>
-            <p
-              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-            >
-              What makes me unique, besides my name and that you can hover over
-              me to see me as a superhero, is that I'm a career changer coming
-              from a field where problem-solving was key to success; giving me
-              over a decade of experience using the same skills I apply to
-              software development to solve complex problems and create
-              solutions that make a difference in people's lives.
-            </p>
-            <p
-              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-            >
-              The skills I gained in patient care transfer directly to software
-              development (understanding the needs of the user/patient,
-              diagnosing issues, and planning/implementing clean solutions),
-              giving me significantly more experience than a typical software
-              developer.
-            </p>
-            <p
-              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-            >
-              Meaning you not only get a skilled developer who cares about
-              creating software that improves people's lives when you hire me,
-              but also someone with more real-world problem-solving
-              experience than you'd expect.
-            </p>
+                Hide Details
+                <img
+                  className="show-hide-image"
+                  src={minus}
+                  alt="minus icon"
+                  loading="lazy"
+                />
+              </button>
+            ) : (
+              <button
+                className={`write-up show-hide-details-button ${userWantsSimplifiedFont && "simple-font"}`}
+                onClick={() => toggleDetails("about")}
+              >
+                Show Details
+                <img
+                  className="show-hide-image"
+                  src={plus}
+                  alt="plus icon"
+                  loading="lazy"
+                />
+              </button>
+            )}
+            {showDetails.about && (
+              <>
+                <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  If you are looking for my skills, work history, or projects,
+                  you can find it by scrolling down. But if you want to know
+                  about what makes me more than just another developer, keep
+                  reading.
+                </p>
+                {/* <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  Well, I could start with my passion for creating pixel perfect
+                  and accessible projects, the fact that I've worked on both
+                  customer facing and internal sites, that I've been on teams of
+                  over 20 IT professionals and as small as a solo developer, or
+                  the list of recommendations I've received from colleagues and
+                  clients on my{" "}
+                  <a
+                    className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
+                    href="https://www.linkedin.com/in/dicky-kitchen-jr-89727b240/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn profile
+                  </a>
+                  , but that's all just icing on the cake.
+                </p> */}
+                <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  What makes me unique, besides my name and that you can hover
+                  over me to see me as a superhero, is that I'm a career changer
+                  coming from a field where problem-solving was key to success;
+                  giving me over a decade of experience using the same skills I
+                  apply to software development to solve complex problems and
+                  create solutions that make a difference in people's lives.
+                </p>
+                <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  The skills I gained in patient care transfer directly to
+                  software development (understanding the needs of the
+                  user/patient, diagnosing issues, and planning/implementing
+                  clean solutions), giving me significantly more experience than
+                  another software developer with my years in the field.
+                </p>
+                <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  Meaning you not only get a skilled developer who cares about
+                  creating software that improves people's lives when you hire
+                  me, but also someone with more real-world problem-solving
+                  experience than you'd expect.
+                </p>
+                <p
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  For proof of my claims, I invite you to check out the list of
+                  recommendations I've received from colleagues and clients on
+                  my{" "}
+                  <a
+                    className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
+                    href="https://www.linkedin.com/in/dicky-kitchen-jr-89727b240/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn profile.
+                  </a>
+                </p>
+              </>
+            )}
           </div>
           <img
             className="comic-me"
