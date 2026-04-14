@@ -118,19 +118,54 @@ function App() {
             <p
               className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
             >
-              Starting my software developer career in 2022 after 13+ years
-              working in healthcare, I began as a freelancer creating websites
-              for various individuals, while running a website where indie and
-              self-published authors could apply for listing, before joining
-              Paradigm-Corp Inc in 2024 as a .NET Developer with a front-end
-              focus.
+              I could list my technical skills and work history, but what
+              matters is what makes me different, right? (plus you can get that
+              stuff by scrolling down)
             </p>
             <p
               className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
             >
-              With a passion for creating pixel perfect and accessible projects,
-              I have worked on both customer facing and internal sites, on teams
-              of over 20 IT professionals and as small as a solo developer.
+              Well, I could start with my passion for creating pixel perfect and
+              accessible projects, the fact that I've worked on both customer
+              facing and internal sites, that I've been on teams of over 20 IT
+              professionals and as small as a solo developer, or the list of
+              recommendations I've received from colleagues and clients on my{" "}
+              <a
+                className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
+                href="https://www.linkedin.com/in/dicky-kitchen-jr-89727b240/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn profile
+              </a>
+              , but that's all just icing on the cake.
+            </p>
+            <p
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+            >
+              What makes me unique, besides my name and that you can hover over
+              me to see me as a superhero, is that I'm a career changer coming
+              from a field where problem-solving was key to success; giving me
+              over a decade of experience using the same skills I apply to
+              software development to solve complex problems and create
+              solutions that make a difference in people's lives.
+            </p>
+            <p
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+            >
+              The skills I gained in patient care transfer directly to software
+              development (understanding the needs of the user/patient,
+              diagnosing issues, and planning/implementing clean solutions),
+              giving me significantly more experience than a typical software
+              developer.
+            </p>
+            <p
+              className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+            >
+              Meaning you not only get a skilled developer who cares about
+              creating software that improves people's lives when you hire me,
+              but also someone with more real-world problem-solving
+              experience than you'd expect.
             </p>
           </div>
           <img
