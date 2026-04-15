@@ -120,8 +120,8 @@ function App() {
               className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
             >
               TLDR: Super(hero) developer with applicable experience from over a
-              decade in a previous career who brings more to the table than
-              your typical developer.
+              decade in a previous career who brings more to the table than your
+              typical developer.
             </p>
             {showDetails.about ? (
               <button
@@ -160,25 +160,6 @@ function App() {
                   about what makes me more than just another developer, keep
                   reading.
                 </p>
-                {/* <p
-                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
-                >
-                  Well, I could start with my passion for creating pixel perfect
-                  and accessible projects, the fact that I've worked on both
-                  customer facing and internal sites, that I've been on teams of
-                  over 20 IT professionals and as small as a solo developer, or
-                  the list of recommendations I've received from colleagues and
-                  clients on my{" "}
-                  <a
-                    className={`resume-link ${userWantsSimplifiedFont && "simple-font"}`}
-                    href="https://www.linkedin.com/in/dicky-kitchen-jr-89727b240/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn profile
-                  </a>
-                  , but that's all just icing on the cake.
-                </p> */}
                 <p
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
@@ -580,9 +561,9 @@ function App() {
                     className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                   >
                     Worked in hospital and home care settings to provide
-                    physical therapy needs to patients using similar
-                    problem-solving skills currently used as a software
-                    developer
+                    physical therapy needs to patients using similar planning,
+                    problem-solving, and communication skills currently used as
+                    a software developer
                   </li>
                 </ul>
               )}
