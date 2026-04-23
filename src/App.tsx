@@ -37,6 +37,13 @@ function App() {
 
   const form = useRef<HTMLFormElement>(null);
 
+  // attention to detail here
+  const handleHumanChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      window.location.replace("https://truthsocial.com/");
+    }
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -744,6 +751,20 @@ function App() {
               name="message"
               id="message"
               required
+            />
+            {/* attention to detail here */}
+            <label htmlFor="website" style={{ display: "none" }}>
+              Verify you are human by typing anything in this box (spam bots
+              will leave it empty):
+            </label>
+            <input
+              type="text"
+              name="website"
+              id="website"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+              onChange={handleHumanChange}
             />
             <button className="write-up submit-button" type="submit">
               <img
