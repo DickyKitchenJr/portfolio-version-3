@@ -58,6 +58,16 @@ function App() {
 
     if (!form.current) return;
 
+    //kept receiving spam messages from emails ending in "@jmailservice.com", so I added a filter to prevent messages from emails with that ending that will clear the form and not submit it
+    if (formData.user_email.endsWith("@jmailservice.com")) {
+      setFormData({
+        user_name: "",
+        user_email: "",
+        message: "",
+      });
+      return;
+    }
+
     emailjs
       .sendForm(service, template, form.current, {
         publicKey: publicKey,
