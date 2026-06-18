@@ -626,6 +626,51 @@ function App() {
               <h3
                 className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
               >
+                Dads Know Stuff
+              </h3>
+              <a
+                className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
+                href="https://dadsknowstuff.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                dadsknowstuff.com
+              </a>
+              <ul className="resume-ul">
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  A site that allows users to read and submit lessons from dads
+                  and dad jokes, learn facts about how dads impact lives, create
+                  a custom link to share a message with a dad, and shop for
+                  merchandise related to the site; all with the goal of
+                  celebrating dads and sharing the love and wisdom of dads.
+                </li>
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  developed using React.js, JavaScript/TypeScript, HTML, CSS,
+                  MySQL, Jest, and Prisma
+                </li>
+                <li
+                  className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                >
+                  Project Repo -{" "}
+                  <a
+                    className={`write-up project-link ${userWantsSimplifiedFont && "simple-font"}`}
+                    href="https://github.com/DickyKitchenJr/dads-know-stuff"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                className={`write-up project-name ${userWantsSimplifiedFont && "simple-font"}`}
+              >
                 My Math Practice
               </h3>
               <a
@@ -647,7 +692,8 @@ function App() {
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
-                  developed using React.js, JavaScript/TypeScript, HTML, and CSS
+                  developed using Next.js, React.js, JavaScript/TypeScript,
+                  HTML, and CSS
                 </li>
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
