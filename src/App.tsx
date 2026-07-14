@@ -285,6 +285,9 @@ function App() {
               <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
                 ❖ GitHub Copilot
               </span>
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ MongoDB
+              </span>
             </p>
           </div>
           <img className="comic-word" src={bam} alt="comic style BAM" />
@@ -649,8 +652,8 @@ function App() {
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
-                  developed using Next.js, React.js, JavaScript/TypeScript, HTML, CSS,
-                  MySQL, Jest, and Prisma
+                  developed using Next.js, React.js, JavaScript/TypeScript,
+                  HTML, CSS, MySQL, Jest, and Prisma
                 </li>
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
@@ -692,8 +695,8 @@ function App() {
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
-                  developed using Vite, React.js, JavaScript/TypeScript,
-                  HTML, and CSS
+                  developed using Vite, React.js, JavaScript/TypeScript, HTML,
+                  and CSS
                 </li>
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
