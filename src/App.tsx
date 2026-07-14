@@ -649,7 +649,7 @@ function App() {
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
-                  developed using React.js, JavaScript/TypeScript, HTML, CSS,
+                  developed using Next.js, React.js, JavaScript/TypeScript, HTML, CSS,
                   MySQL, Jest, and Prisma
                 </li>
                 <li
@@ -692,7 +692,7 @@ function App() {
                 <li
                   className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                 >
-                  developed using Next.js, React.js, JavaScript/TypeScript,
+                  developed using Vite, React.js, JavaScript/TypeScript,
                   HTML, and CSS
                 </li>
                 <li
