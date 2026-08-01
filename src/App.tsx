@@ -390,6 +390,13 @@ function App() {
                   <li
                     className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
                   >
+                    Converted Figma designs into pixel-perfect functional
+                    front-end code while collaborating with the designer to
+                    ensure the best user experience and accessibility
+                  </li>
+                  <li
+                    className={`write-up ${userWantsSimplifiedFont && "simple-font"}`}
+                  >
                     Mentored a new front-end developer; acting as their point of
                     contact for questions regarding company standards and coding
                     difficulties within their assigned projects, and mentored a
