@@ -288,6 +288,15 @@ function App() {
               <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
                 ❖ MongoDB
               </span>
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Accessibility (WCAG)
+              </span>
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Responsive Development
+              </span>
+              <span className={`${userWantsSimplifiedFont && "simple-font"}`}>
+                ❖ Design Implementation
+              </span>
             </p>
           </div>
           <img className="comic-word" src={bam} alt="comic style BAM" />
